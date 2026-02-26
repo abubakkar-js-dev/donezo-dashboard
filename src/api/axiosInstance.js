@@ -5,7 +5,6 @@ const api = axios.create({
 });
 
 // Attach Token
-
 api.interceptors.request.use((config)=>{
     const token = localStorage.getItem('token');
     if(token){
@@ -18,7 +17,6 @@ api.interceptors.request.use((config)=>{
 
 
 // Auto-logout on 401 and 403
-
 api.interceptors.response.use(
     (res)=> res
 ,(err)=>{
