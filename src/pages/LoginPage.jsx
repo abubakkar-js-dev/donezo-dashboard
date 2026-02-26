@@ -14,7 +14,7 @@ const LoginPage = () => {
     const [error, setError] = useState("");
 
     const handleSubmit = (e)=>{
-        e.prevetDefault();
+        e.preventDefault();
 
         setLoading(true);
         setEmail("");
