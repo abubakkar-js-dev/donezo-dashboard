@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "formulahendry.auto-rename-tag",
+    "ms-vscode.vscode-typescript-next",
+    "mongodb.mongodb-vscode"
+  ],
+  "unwantedRecommendations": [
+    "ms-python.python",
+    "ms-vscode.cpptools",
+    "ms-azuretools.vscode-docker",
+    "batisteo.vscode-django"
+  ]
+}
