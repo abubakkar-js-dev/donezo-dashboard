@@ -16,9 +16,10 @@ export default function AuthProvider({children}) {
 
         try {
             const {data} = await loginUser(email,password);
+            const {token, ...userObj} = data;
 
-            localStorage.setItem('token', data.token);
-            localStorage.setItem('user',JSON.stringify(data))
+            localStorage.setItem('token', token);
+            localStorage.setItem('user',JSON.stringify(userObj))
 
             setUser(data);
 

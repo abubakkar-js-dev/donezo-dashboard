@@ -27,6 +27,7 @@ api.interceptors.response.use(
     if(status === 401 || status === 403){
         // log out user
       localStorage.removeItem('token');
+      localStorage.removeItem('user');
       window.location.href = '/';
     }
     return Promise.reject(err);
