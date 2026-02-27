@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { getOverview, getUsers, getAnalytics, getProducts } from '../api/dashboard';
+import useAuth from './useAuth';
 
 export function useDashboard() {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
+  const user = useAuth();
+  console.log(user);
 
   useEffect(() => {
     Promise.all([getOverview(), getUsers(), getAnalytics(), getProducts()])

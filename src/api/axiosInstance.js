@@ -20,12 +20,14 @@ api.interceptors.request.use((config)=>{
 api.interceptors.response.use(
     (res)=> res
 ,(err)=>{
+    console.log(err)
     const status = err.response.status;
-    // console.log(status)
+    console.log(status)
+    console.log(status)
     if(status === 401 || status === 403){
         // log out user
       localStorage.removeItem('token');
-      window.location.href = '/login';
+      window.location.href = '/';
     }
     return Promise.reject(err);
 })

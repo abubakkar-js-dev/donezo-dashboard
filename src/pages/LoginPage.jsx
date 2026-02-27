@@ -7,24 +7,28 @@ import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const LoginPage = () => {
-    const something = useAuth();
-    console.log(something)
+    const {user,login} = useAuth();
+    console.log(user)
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
     const [loading, setLoading] = useState(false);
     const [showPassword,setShowPassword] = useState(false);
     const [error, setError] = useState("");
+    // console.log(email,password);
 
-    const handleSubmit = (e)=>{
+    const handleSubmit = async(e)=>{
         e.preventDefault();
 
         setLoading(true);
         setEmail("");
+        setError("");
         try {
+            await login(email,password);
             console.log('Successfully Login');
             navigate("/dashboard")
         } catch (err) {
+            console.log("login Error",err.message)
             setError(err.message || 'Failed to Login')
         }finally{
             setLoading(false)
