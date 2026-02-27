@@ -1,14 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
+import Main from "../Layouts/Main";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <LoginPage />,
+        element: <Main />,
     },
     {
         path: '/dashboard',
-        element: <h2 className="text-2xl text-primary">Dashboard here</h2>
+        element: <PrivateRoutes><DashboardLayout /></PrivateRoutes>
     }
 ])
 

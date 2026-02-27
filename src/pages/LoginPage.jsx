@@ -4,8 +4,11 @@ import { motion } from 'framer-motion';
 import { Mail, Lock, Eye, EyeOff, CheckCircle2 } from "lucide-react";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 const LoginPage = () => {
+    const something = useAuth();
+    console.log(something)
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
