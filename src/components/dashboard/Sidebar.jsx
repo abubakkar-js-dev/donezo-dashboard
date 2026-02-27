@@ -28,11 +28,12 @@ const generalItems = [
 ];
 
 const Sidebar = () => {
-  const { logout } = useAuth();
+  const { logOut } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout();
+    console.log('Logout Done')
+    logOut();
     navigate("/login");
   };
 
