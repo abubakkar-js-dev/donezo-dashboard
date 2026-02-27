@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import PrivateRoutes from "./PrivateRoutes";
+import NotFound from "../pages/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
     {
         path: '/dashboard',
         element: <PrivateRoutes><DashboardLayout /></PrivateRoutes>,
+    },
+    {
+        path: '*',
+        element: <NotFound />
     }
 ])
 

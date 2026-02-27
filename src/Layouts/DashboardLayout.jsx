@@ -5,11 +5,19 @@ import TopBar from '../components/dashboard/Topbar';
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { Plus, Upload } from "lucide-react";
+import StatCards from '../components/dashboard/StatCards';
+import Loading from '../components/shared/Loading'
 
 const DashboardLayout = () => {
-    const {data} = useDashboard();
+    const {data,loading} = useDashboard();
+    console.log(data.overview)
    const {analytics} = data;
    console.log(analytics)
+
+  if(loading){
+    return <Loading />
+  }
+
   return (
     <div className='flex min-h-screen bg-background'>
       {/* Side Bar */}
@@ -36,6 +44,9 @@ const DashboardLayout = () => {
               </button>
             </div>
           </div>
+
+           <StatCards overview={data.overview} />
+
 
 
         </motion.div>
