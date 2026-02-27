@@ -35,7 +35,7 @@
   --color-input: hsl(150 10% 85%);
   --color-ring: hsl(152 45% 28%);
 
-  --color-sidebar-background: hsl(0 0% 100%);
+  --color-sidebar: hsl(0 0% 100%);
   --color-sidebar-foreground: hsl(150 5% 40%);
   --color-sidebar-primary: hsl(152 45% 28%);
   --color-sidebar-primary-foreground: hsl(0 0% 100%);
