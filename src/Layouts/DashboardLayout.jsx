@@ -7,6 +7,9 @@ import { motion } from 'framer-motion';
 import { Plus, Upload } from "lucide-react";
 import StatCards from '../components/dashboard/StatCards';
 import Loading from '../components/shared/Loading'
+import ProjectAnalytics from '../components/dashboard/ProjectAnalytics';
+import Reminders from '../components/dashboard/Remainders';
+import ProjectList from '../components/dashboard/ProjectList';
 
 const DashboardLayout = () => {
     const {data,loading} = useDashboard();
@@ -47,7 +50,11 @@ const DashboardLayout = () => {
 
            <StatCards overview={data.overview} />
 
-
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+            <ProjectAnalytics analytics={data.analytics} />
+            <Reminders />
+            <ProjectList products={data.products} />
+          </div>
 
         </motion.div>
       </main>
