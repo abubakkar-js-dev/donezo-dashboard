@@ -2,7 +2,7 @@
 
 A task management dashboard built with React for the Frontend Intern assignment. Features JWT authentication, live API data, and a fully responsive layout that matches the provided Dribbble design.
 
-**Live Demo:** [https://donezo-dashboard.vercel.app/]  
+**Live Demo:** [Donezo](https://donezo-ruddy.vercel.app/)  
 **Design Reference:** [Dribbble](https://dribbble.com/shots/25241984-Task-Management-Dashboard)  
 **API:** https://task-api-eight-flax.vercel.app
 
