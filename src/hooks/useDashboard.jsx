@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
-import { getOverview, getUsers, getAnalytics, getProducts } from '../api/dashboard';
-import useAuth from './useAuth';
+import { useEffect, useState } from "react";
+// import { getOverview, getUsers, getAnalytics, getProducts } from '../api/dashboard';
+import { getDashboard } from "../api/dashboard";
+import useAuth from "./useAuth";
 
 export function useDashboard() {
   const [data, setData] = useState({});
@@ -9,17 +10,32 @@ export function useDashboard() {
   console.log(user);
 
   useEffect(() => {
-    Promise.all([getOverview(), getUsers(), getAnalytics(), getProducts()])
-      .then(([overview, users, analytics, products]) => {
-        setData({
-          overview:  overview.data,
-          users:     users.data,
-          analytics: analytics.data,
-          products:  products.data,
-        });
-      })
-      .finally(() => setLoading(false));
+    getDashboard().then((res) => {
+      setData(res.data);
+    }).finally(()=>{
+        setLoading(false)
+    })
   }, []);
 
   return { data, loading };
+
+  
+
+  //   Another Way
+
+
+  //   useEffect(() => {
+  //     Promise.all([getOverview(), getUsers(), getAnalytics(), getProducts()])
+  //       .then(([overview, users, analytics, products]) => {
+  //         setData({
+  //           overview:  overview.data,
+  //           users:     users.data,
+  //           analytics: analytics.data,
+  //           products:  products.data,
+  //         });
+  //       })
+  //       .finally(() => setLoading(false));
+  //   }, []);
+
+  //   return { data, loading };
 }

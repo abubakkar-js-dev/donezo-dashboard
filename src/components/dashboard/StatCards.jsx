@@ -40,26 +40,26 @@ const StatCards = ({ overview }) => {
   const cards = [
     {
       title: "Total Projects",
-      value: overview.totalUsers > 1000 ? Math.round(overview.totalUsers / 500) : overview.totalUsers,
+      value: overview.totalUsers ,
       subtitle: "Increased from last month",
       icon: <TrendingUp className="h-3 w-3" />,
       highlighted: true,
     },
     {
       title: "Ended Projects",
-      value: Math.round(overview.activeUsers / 800),
+      value: Math.round(overview.activeUsers ),
       subtitle: "Increased from last month",
       icon: <Users className="h-3 w-3" />,
     },
     {
       title: "Running Projects",
-      value: Math.round(overview.revenue / 20000),
+      value: Math.round(overview.revenue ),
       subtitle: "Increased from last month",
       icon: <DollarSign className="h-3 w-3" />,
     },
     {
       title: "Pending Project",
-      value: Math.round(overview.growth / 10),
+      value: Math.round(overview.growth ),
       subtitle: "On Discuss",
       icon: <Activity className="h-3 w-3" />,
     },

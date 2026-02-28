@@ -13,7 +13,7 @@ const TopBar = () => {
         <input
           type="text"
           placeholder="Search task"
-          className="w-full rounded-lg border border-border bg-card px-10 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all"
+          className="w-full rounded-lg border border-border bg-card px-10 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring transition-all ml-8 md:ml-12 lg:ml-0"
         />
         <kbd className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground bg-muted px-1.5 py-0.5 rounded-md flex items-center"><Command className="h-3 h3" /> <span className="text-sm">F</span> </kbd>
       </div>

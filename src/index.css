@@ -19,6 +19,8 @@
   --color-primary: hsl(152 45% 28%);
   --color-primary-foreground: hsl(0 0% 100%);
 
+  --color-primary-light: #c8e6d4; 
+
   --color-secondary: hsl(150 20% 95%);
   --color-secondary-foreground: hsl(150 10% 15%);
 

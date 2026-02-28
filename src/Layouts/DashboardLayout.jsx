@@ -10,6 +10,9 @@ import Loading from '../components/shared/Loading'
 import ProjectAnalytics from '../components/dashboard/ProjectAnalytics';
 import Reminders from '../components/dashboard/Remainders';
 import ProjectList from '../components/dashboard/ProjectList';
+import TeamCollaboration from '../components/dashboard/TeamCollaboration';
+import TimeTracker from '../components/dashboard/TimeTracker';
+import ProjectProgress from '../components/dashboard/ProjectProgress';
 
 const DashboardLayout = () => {
     const {data,loading} = useDashboard();
@@ -54,6 +57,12 @@ const DashboardLayout = () => {
             <ProjectAnalytics analytics={data.analytics} />
             <Reminders />
             <ProjectList products={data.products} />
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+            <TeamCollaboration users={data.users} />
+            <ProjectProgress />
+            <TimeTracker />
           </div>
 
         </motion.div>
