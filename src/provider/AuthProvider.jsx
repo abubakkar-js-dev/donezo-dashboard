@@ -1,6 +1,5 @@
-import React from 'react'
-import AuthContext from '../context/AuthContext'
-import { useState } from 'react'
+import { useState } from 'react';
+import AuthContext from '../context/AuthContext';
 
 import { loginUser } from '../api/auth';
 
@@ -24,7 +23,9 @@ export default function AuthProvider({children}) {
             setUser(userObj);
 
         } catch (error) {
-            setError(error.message || 'Invalid email or password');
+            const message = error?.response?.data?.message || error.message || 'Invalid email or password';
+            setError(message);
+            throw new Error(message);
         }finally{
             setLoading(false);
         }

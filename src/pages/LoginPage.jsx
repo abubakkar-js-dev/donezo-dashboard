@@ -1,14 +1,12 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
 import { motion } from 'framer-motion';
-import { Mail, Lock, Eye, EyeOff, CheckCircle2 } from "lucide-react";
+import { AlertCircle, CheckCircle2, Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const LoginPage = () => {
-    const {user,login} = useAuth();
-    console.log(user)
+    const { login } = useAuth();
     const navigate = useNavigate();
     const [email,setEmail] = useState("");
     const [password,setPassword] = useState("");
@@ -22,16 +20,16 @@ const LoginPage = () => {
 
         setLoading(true);
         setError("");
+        let success = false;
         try {
             await login(email,password);
-            // console.log('Successfully Login');
-            navigate("/dashboard")
+            success = true;
         } catch (err) {
-            // console.log("login Error",err.message)
             setError(err.message || 'Failed to Login')
         }finally{
             setLoading(false)
         }
+        if(success) navigate("/dashboard");
     }
 
   return (
@@ -80,8 +78,9 @@ const LoginPage = () => {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-4 rounded-lg bg-destructive/10 p-3 text-sm text-destructive"
+              className="mb-4 rounded-lg bg-destructive/10 border border-destructive/20 p-3 text-sm text-destructive flex items-center gap-2"
             >
+              <AlertCircle className="h-4 w-4 shrink-0" />
               {error}
             </motion.div>
           )}
@@ -138,7 +137,7 @@ const LoginPage = () => {
           </form>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            Demo credentials are pre-filled for you
+            Use <span className="font-medium text-foreground">user1@example.com</span> / <span className="font-medium text-foreground">password123</span>
           </p>
         </div>
       </motion.div>
