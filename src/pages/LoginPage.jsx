@@ -24,10 +24,10 @@ const LoginPage = () => {
         setError("");
         try {
             await login(email,password);
-            console.log('Successfully Login');
+            // console.log('Successfully Login');
             navigate("/dashboard")
         } catch (err) {
-            console.log("login Error",err.message)
+            // console.log("login Error",err.message)
             setError(err.message || 'Failed to Login')
         }finally{
             setLoading(false)

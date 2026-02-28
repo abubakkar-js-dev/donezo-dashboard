@@ -13,15 +13,10 @@ import ProjectList from '../components/dashboard/ProjectList';
 import TeamCollaboration from '../components/dashboard/TeamCollaboration';
 import TimeTracker from '../components/dashboard/TimeTracker';
 import ProjectProgress from '../components/dashboard/ProjectProgress';
-import useAuth from '../hooks/useAuth';
 
 const DashboardLayout = () => {
     const {data,loading} = useDashboard();
-    const {user} = useAuth();
-    console.log("User:::: ",user)
-    console.log(data.overview)
-   const {analytics} = data;
-   console.log(analytics)
+
 
   if(loading){
     return <Loading />

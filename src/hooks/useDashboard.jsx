@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 // import { getOverview, getUsers, getAnalytics, getProducts } from '../api/dashboard';
 import { getDashboard } from "../api/dashboard";
-import useAuth from "./useAuth";
 
 export function useDashboard() {
   const [data, setData] = useState({ overview: {}, users: [], analytics: [], products: [] });
   const [loading, setLoading] = useState(true);
-  const user = useAuth();
-  console.log(user);
 
   useEffect(() => {
     getDashboard().then((res) => {
