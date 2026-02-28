@@ -4,6 +4,7 @@ import { AlertCircle, CheckCircle2, Eye, EyeOff, Lock, Mail } from "lucide-react
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
+import useTitle from '../hooks/useTitle';
 
 const LoginPage = () => {
     const { login } = useAuth();
@@ -31,6 +32,7 @@ const LoginPage = () => {
         }
         if(success) navigate("/dashboard");
     }
+    useTitle('Login')
 
   return (
  <div className="flex min-h-screen overflow-hidden">

@@ -13,10 +13,12 @@ import ProjectList from '../components/dashboard/ProjectList';
 import TeamCollaboration from '../components/dashboard/TeamCollaboration';
 import TimeTracker from '../components/dashboard/TimeTracker';
 import ProjectProgress from '../components/dashboard/ProjectProgress';
+import useTitle from '../hooks/useTitle';
 
 const DashboardLayout = () => {
     const {data,loading} = useDashboard();
 
+    useTitle('Dashboard')
 
   if(loading){
     return <Loading />
