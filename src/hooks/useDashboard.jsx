@@ -4,7 +4,7 @@ import { getDashboard } from "../api/dashboard";
 import useAuth from "./useAuth";
 
 export function useDashboard() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState({ overview: {}, users: [], analytics: [], products: [] });
   const [loading, setLoading] = useState(true);
   const user = useAuth();
   console.log(user);

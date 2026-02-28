@@ -20,7 +20,7 @@ api.interceptors.request.use((config)=>{
 api.interceptors.response.use(
     (res)=> res
 ,(err)=>{
-    console.log(err)
+    console.log(err.message)
     const status = err.response.status;
     console.log(status)
     console.log(status)
@@ -28,7 +28,7 @@ api.interceptors.response.use(
         // log out user
       localStorage.removeItem('token');
       localStorage.removeItem('user');
-      window.location.href = '/';
+    //   window.location.href = '/';
     }
     return Promise.reject(err);
 })

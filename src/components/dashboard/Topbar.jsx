@@ -30,7 +30,7 @@ const TopBar = () => {
             TM
           </div>
           <div className="hidden md:block">
-            <p className="text-sm font-semibold text-foreground">Totok Michael</p>
+            <p className="text-sm font-semibold text-foreground"> {user?.name || 'Totok Michael'} </p>
             <p className="text-xs text-muted-foreground">{user?.email || "tmichael20@mail.com"}</p>
           </div>
         </div>

@@ -21,7 +21,6 @@ const LoginPage = () => {
         e.preventDefault();
 
         setLoading(true);
-        setEmail("");
         setError("");
         try {
             await login(email,password);

@@ -21,7 +21,7 @@ export default function AuthProvider({children}) {
             localStorage.setItem('token', token);
             localStorage.setItem('user',JSON.stringify(userObj))
 
-            setUser(data);
+            setUser(userObj);
 
         } catch (error) {
             setError(error.message || 'Invalid email or password');
