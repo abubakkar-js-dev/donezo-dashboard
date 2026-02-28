@@ -32,7 +32,7 @@ A task management dashboard built with React for the Frontend Intern assignment.
 
 **1. Clone and install:**
 ```bash
-git clone <https://github.com/abubakkar-js-dev/donezo-dashboard>
+git clone https://github.com/abubakkar-js-dev/donezo-dashboard
 cd donezo-dashboard
 npm install
 ```
